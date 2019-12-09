@@ -17,7 +17,7 @@ class SinaNews():
             self.url='http://finance.sina.com.cn/7x24/'
             option = webdriver.ChromeOptions()
             option.add_argument("headless")
-            self.driver = webdriver.Chrome(chrome_options=option)#使用以下方法在运行的时候可以不打开浏览器，运行速度杠杠的
+            self.driver = webdriver.Chrome(options=option)#使用以下方法在运行的时候可以不打开浏览器，运行速度杠杠的
             self.spider()
       def __close__(self):
             print('spider will be closed.')
@@ -56,7 +56,7 @@ class SinaNews():
       
       def read_file(self):
             MPP = {}
-            with open("data/news",'r',1,'gbk') as file:
+            with open("data/news",'r') as file:
                   lis = file.readlines()
                   for i in range(len(lis)):
                         if i%2==0:

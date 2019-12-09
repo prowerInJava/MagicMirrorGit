@@ -45,7 +45,7 @@ class magicMirror:
                   self.cityLabel.after(1000,self.get_city)
       #手动配置需要显示的城市，config/mycity.txt文件
       def get_config(self):
-            with open(r'config/mycity.txt','r',1,'gbk') as file:
+            with open(r'config/mycity.txt','r') as file:
                   pcmap = {}
                   for f in file.readlines():
                         try:
@@ -58,7 +58,7 @@ class magicMirror:
       #获取新浪写入的新闻资料，data/news.txt
       def get_sinaNews(self):
             first = ''
-            with open('data/news.txt','r',1,'gbk') as file:
+            with open('data/news.txt','r') as file:
                   texts = file.readline()
             if texts != first:
                   a = texts.split('***')
@@ -405,7 +405,10 @@ class magicMirror:
             
             self.mirror.mainloop()
 #magicMirror()
-magicMirror()
+
+if __name__=='__main__':
+      magicMirror()
+
 
             
             
