@@ -2,7 +2,8 @@ from bs4GetWeatherToday import bs4GetWeatherToday
 from bs4GetWeather7d import bs4GetWeather7d
 from model.getUrlSource import getUrlSource
 from model.getCityMessage import getCityMessage
-
+import time
+import random
 def get_config():
       with open(r'config/mycity.txt','r',1,'gbk') as file:
             pcmap = {}
@@ -15,8 +16,9 @@ def get_config():
                         continue
       return pcmap
 class weaInfo2files:
-      def __init__(self,city):
-            self.city = city
+      def __init__(self):
+            self.city = get_config()['city']
+            
             self.code = getCityMessage(r'model/city.json',self.city).getCode()
             self.url1d = 'http://www.weather.com.cn/weather1d/{}.shtml'.format(self.code)
             self.url7d = 'http://www.weather.com.cn/weather/{}.shtml'.format(self.code)
@@ -25,9 +27,13 @@ class weaInfo2files:
             self.tips_path = (r'data/tips')
             self.today_path = (r'data/todayWea')
             self.d7day_path = (r'data/7daysWea')
-            self.writeTips()
-            self.write1dWea()
-            self.write7dWea()
+            while True:
+                  self.writeTips()
+                  self.write1dWea()
+                  self.write7dWea()
+                  sleeptime = random.choice(range(30,1000))
+                  #print(self.city,sleeptime)
+                  time.sleep(sleeptime)
             return None
       
       def writeTips(self):
@@ -67,7 +73,6 @@ class weaInfo2files:
                   print('获取7天天气出现某个问题')
 
 if __name__ == '__main__':
-      city = get_config()['city']
-      print(city)
-      weaInfo2files(city)                  
+      
+      weaInfo2files()                  
                         
