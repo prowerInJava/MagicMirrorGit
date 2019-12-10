@@ -48,7 +48,7 @@ class SinaNews():
                                     #print(str(i) + new.text)
                   self.write_file()
                   sleeptime = random.choice(range(45,145))
-                  print('sina: ',sleeptime)
+                  #print('sina: ',sleeptime)
                   time.sleep(sleeptime)
                   #self.spider()
       

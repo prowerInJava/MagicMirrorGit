@@ -32,7 +32,7 @@ class weaInfo2files:
                   self.write1dWea()
                   self.write7dWea()
                   sleeptime = random.choice(range(30,1000))
-                  print(self.city,sleeptime)
+                  #print(self.city,sleeptime)
                   time.sleep(sleeptime)
             return None
       

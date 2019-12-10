@@ -17,7 +17,7 @@ class magicMirror:
             #self.get_WeatherInfo()
             while True:
                   self.Mirror()
-                  print('Main window')
+                  #print('Main window')
                   time.sleep(500)
             return None
       #对dayLabel hourLabel miLabel实时显示时间
