@@ -66,3 +66,7 @@ Gdk-Message: 18:54:10.451: /usr/lib/firefox-esr/firefox-esr: Fatal IO error 11 (
 1576234496858	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.qtDYIOm208tn"
 1576234504899	Marionette	INFO	Listening on port 45479
 1576234504965	Marionette	WARN	TLS certificate errors will be ignored for this session
+1576237867215	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.oHQgAuse3uOw"
+1576237885370	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.X3OurAqaWoFK"
+1576237894147	Marionette	INFO	Listening on port 35851
+1576237894224	Marionette	WARN	TLS certificate errors will be ignored for this session
