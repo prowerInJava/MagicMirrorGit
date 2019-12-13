@@ -280,7 +280,7 @@ class magicMirror:
       def Mirror(self):
             self.mirror = tk.Tk()
             self.mirror.title(self.title)
-            #self.mirror.overrideredirect(True)
+            self.mirror.overrideredirect(True)
             w = self.mirror.winfo_screenwidth()
             h = self.mirror.winfo_screenheight()
             self.mirror.geometry("%dx%d"%(w,h))
