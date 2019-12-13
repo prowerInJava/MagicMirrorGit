@@ -45,3 +45,24 @@ Gdk-Message: 18:32:29.596: /usr/lib/firefox-esr/firefox-esr: Fatal IO error 11 (
 1575975716686	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.y7eXcYXA7kcm"
 1575975724032	Marionette	INFO	Listening on port 36603
 1575975724134	Marionette	WARN	TLS certificate errors will be ignored for this session
+1575976034369	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.E5WFFMZxrwRj"
+1575976041462	Marionette	INFO	Listening on port 41349
+1575976041568	Marionette	WARN	TLS certificate errors will be ignored for this session
+1576078768479	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.hmBjnW88o3qY"
+1576078775726	Marionette	INFO	Listening on port 33583
+1576078775843	Marionette	WARN	TLS certificate errors will be ignored for this session
+Gdk-Message: 18:50:36.977: /usr/lib/firefox-esr/firefox-esr: Fatal IO error 11 (资源暂时不可用) on X server :1025.
+
+Gdk-Message: 18:50:36.979: /usr/lib/firefox-esr/firefox-esr: Fatal IO error 11 (资源暂时不可用) on X server :1025.
+
+1576234339120	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Hge2TccF5ngq"
+1576234346673	Marionette	INFO	Listening on port 36593
+1576234346855	Marionette	WARN	TLS certificate errors will be ignored for this session
+Gdk-Message: 18:54:10.446: /usr/lib/firefox-esr/firefox-esr: Fatal IO error 11 (资源暂时不可用) on X server :1025.
+
+Gdk-Message: 18:54:10.451: /usr/lib/firefox-esr/firefox-esr: Fatal IO error 11 (资源暂时不可用) on X server :1025.
+
+1576234475464	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.7GACSXRdvjLI"
+1576234496858	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.qtDYIOm208tn"
+1576234504899	Marionette	INFO	Listening on port 45479
+1576234504965	Marionette	WARN	TLS certificate errors will be ignored for this session

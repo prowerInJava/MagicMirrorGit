@@ -408,7 +408,11 @@ class magicMirror:
                                       wraplength = 690,anchor = 'nw',justify = 'left',pady=3)
             self.newsLabel.place(x=34,y=1130)
             self.get_sinaNews()
-            
+            def func(event):
+                  if event.char in ['q','Q']:
+                        print('event')
+                        self.mirror.destroy()
+            self.mirror.bind("<Key>",func)#窗体绑定事件，按下q/Q键窗体会被destroy掉
             self.mirror.mainloop()
 #magicMirror()
 
