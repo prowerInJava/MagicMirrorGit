@@ -20,7 +20,10 @@ class bs4GetWeatherToday():
                   sun = li.find_all('p')[3]
                   temp = {}
                   temp[li.find('h1').string.split(r'日')[1]] = li.find('p',{'class':'wea'}).text.strip()
-                  temp['气温'] = li.find('p',{'class':'tem'}).text.strip()
+                  if li.find('h1').string.split(r'日')[1] =='白天':
+                        temp['高温'] = li.find('p',{'class':'tem'}).text.strip()
+                  elif li.find('h1').string.split(r'日')[1] =='夜间':
+                        temp['低温'] = li.find('p',{'class':'tem'}).text.strip()
                   temp['风向'] = li.find('p',{'class':'win'}).find('span').attrs['title']
                   temp['风力'] = li.find('p',{'class':'win'}).text.strip()
                   temp[sun.text.split(' ')[0].strip()] = sun.text.split(' ')[1].strip()

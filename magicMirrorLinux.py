@@ -15,7 +15,10 @@ class magicMirror:
             self.title = "MagicMirror"
             self.weatherPng = 'png/rain.png'
             #self.get_WeatherInfo()
-            self.Mirror()
+            while True:
+                  self.Mirror()
+                  #print('Main window')
+                  time.sleep(500)
             return None
       #对dayLabel hourLabel miLabel实时显示时间
       def tick(self):
@@ -127,7 +130,10 @@ class magicMirror:
             localtime = time.strftime('%H:%M')
             if day !=w:
                   self.todayLabel.config(text=day)
-                  self.tump.config(text=high+'~'+low+'℃')
+                  if high != 'None':
+                        self.tump.config(text=high+'~'+low+'℃')
+                  else:
+                        self.tump.config(text=low+'℃')
                   self.wind.config(text=wind)
                   self.windforce.config(text=windforce)
                   self.sunriseL.config(text='日出 '+sunrise)
@@ -268,7 +274,7 @@ class magicMirror:
       def Mirror(self):
             self.mirror = tk.Tk()
             self.mirror.title(self.title)
-            self.mirror.overrideredirect(True)
+            #self.mirror.overrideredirect(True)
             w = self.mirror.winfo_screenwidth()
             h = self.mirror.winfo_screenheight()
             self.mirror.geometry("%dx%d"%(w,h))
@@ -350,8 +356,8 @@ class magicMirror:
             self.ffLabel.place(x=350,y=235)
             self.fftLabel.place(x=435,y=235)
             #self.ffaLabel.place(x=445,y=235)
-            self.ffweLabel.place(x=520,y=235)
-            self.ffwnLabel.place(x=630,y=235)
+            self.ffweLabel.place(x=540,y=235)
+            self.ffwnLabel.place(x=625,y=235)
             self.ffwnFLabel.place(x=705,y=235)
             
             self.thLabel = tk.Label(text='星期三',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
@@ -363,8 +369,8 @@ class magicMirror:
             self.thLabel.place(x=350,y=260)
             self.thtLabel.place(x=435,y=260)
             #self.thaLabel.place(x=445,y=260)
-            self.thweLabel.place(x=520,y=260)
-            self.thwnLabel.place(x=630,y=260)
+            self.thweLabel.place(x=540,y=260)
+            self.thwnLabel.place(x=625,y=260)
             self.thwnFLabel.place(x=705,y=260)
 
             self.ftLabel = tk.Label(text='星期三',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
@@ -376,8 +382,8 @@ class magicMirror:
             self.ftLabel.place(x=350,y=285)
             self.fttLabel.place(x=435,y=285)
             #self.ftaLabel.place(x=445,y=285)
-            self.ftweLabel.place(x=520,y=285)
-            self.ftwnLabel.place(x=630,y=285)
+            self.ftweLabel.place(x=540,y=285)
+            self.ftwnLabel.place(x=625,y=285)
             self.ftwnFLabel.place(x=705,y=285)
 
             self.fiLabel = tk.Label(text='星期三',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
@@ -389,8 +395,8 @@ class magicMirror:
             self.fiLabel.place(x=350,y=310)
             self.fitLabel.place(x=435,y=310)
             #self.fiaLabel.place(x=445,y=310)
-            self.fiweLabel.place(x=520,y=310)
-            self.fiwnLabel.place(x=630,y=310)
+            self.fiweLabel.place(x=540,y=310)
+            self.fiwnLabel.place(x=625,y=310)
             self.fiwnFLabel.place(x=705,y=310)
             self.get_featureWea()
 

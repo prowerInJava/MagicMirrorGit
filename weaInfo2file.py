@@ -17,17 +17,17 @@ def get_config():
       return pcmap
 class weaInfo2files:
       def __init__(self):
-            self.city = get_config()['city']
             
-            self.code = getCityMessage(r'model/city.json',self.city).getCode()
-            self.url1d = 'http://www.weather.com.cn/weather1d/{}.shtml'.format(self.code)
-            self.url7d = 'http://www.weather.com.cn/weather/{}.shtml'.format(self.code)
-            self.text1d = getUrlSource(self.url1d).getUrlText()
-            self.text7d = getUrlSource(self.url7d).getUrlText()
-            self.tips_path = (r'data/tips')
-            self.today_path = (r'data/todayWea')
-            self.d7day_path = (r'data/7daysWea')
             while True:
+                  self.city = get_config()['city']
+                  self.code = getCityMessage(r'model/city.json',self.city).getCode()
+                  self.url1d = 'http://www.weather.com.cn/weather1d/{}.shtml'.format(self.code)
+                  self.url7d = 'http://www.weather.com.cn/weather/{}.shtml'.format(self.code)
+                  self.text1d = getUrlSource(self.url1d).getUrlText()
+                  self.text7d = getUrlSource(self.url7d).getUrlText()
+                  self.tips_path = (r'data/tips')
+                  self.today_path = (r'data/todayWea')
+                  self.d7day_path = (r'data/7daysWea')
                   self.writeTips()
                   self.write1dWea()
                   self.write7dWea()
