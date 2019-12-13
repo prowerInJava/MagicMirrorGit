@@ -116,10 +116,16 @@ class magicMirror:
                   mappd['日期'] = '星期日'
             day = mappd['日期']
             #print(mappd)
-            high = list7d[0][2].split(':')[1]
+            #high = list7d[0][2].split(':')[1]
+            high = mappd['高温'].split('°')[0]
+            #print(high)
+            low = mappd['低温'].split('°')[0]
+            #print(low)
+            """
             mappd['最高温'] = high
             low = list7d[0][3].split(':')[1]
             mappd['最低温'] = low
+            """
             wind = list7d[0][5].split(':')[1].strip()
             mappd['风向'] = wind
             windforce = list7d[0][4].split(':')[1].strip()
