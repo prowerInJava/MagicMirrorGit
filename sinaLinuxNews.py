@@ -69,7 +69,7 @@ class SinaNews():
             with open("data/news.txt",'w') as file:
                   key = list(mymap.items())[0][0]
                   line = str(key)+ '***' + str(mymap[key])
-                  print(line)
+                  #print(line)
                   file.write(line) 
                         
 if __name__ == '__main__':
