@@ -35,6 +35,7 @@ class magicMirror:
                   daystr = ('%s年%s月%s日'%(year,mm,day))
                   self.dayLabel.config(text = daystr)
                   self.hourLabel.config(text = hour)
+                  #self.hourLabel.config(text='00')
                   self.miLabel.config(text = mi)
                   self.miLabel.after(1000,self.tick)
             return None
@@ -290,129 +291,129 @@ class magicMirror:
             
             #显示日期
             self.dayLabel = tk.Label(self.mainFrame,text = ('%d年%d月%d日'%(2011,12,23)),
-                                     font=('Times New Roman',30,'bold'),fg='darkgray',bg='black')
+                                     font=('Times New Roman',42,'bold'),fg='darkgray',bg='black')
             self.dayLabel['height'] = 1
-            self.dayLabel['width'] = 14
-            self.dayLabel.place(x=20,y=20)
+            self.dayLabel['width'] = 20
+            self.dayLabel.place(x=28,y=28)
 
             #显示时间使用LCD字体DS-Digital
-            self.hourLabel = tk.Label(self.mainFrame,font=('DS-Digital',100),fg='white',bg='black')
-            self.sLabel = tk.Label(self.mainFrame,text=':',font=('DS-Digital',100),fg='white',bg='black')
-            self.miLabel = tk.Label(self.mainFrame,font=('DS-Digital',100),fg='white',bg='black')
+            self.hourLabel = tk.Label(self.mainFrame,font=('DS-Digital',110),fg='white',bg='black')
+            self.sLabel = tk.Label(self.mainFrame,text=':',font=('DS-Digital',110),fg='white',bg='black')
+            self.miLabel = tk.Label(self.mainFrame,font=('DS-Digital',110),fg='white',bg='black')
             self.hourLabel['height'] = 1
-            self.hourLabel['width'] = 2
+            self.hourLabel['width'] = 3
             self.sLabel['height'] = 1
             self.miLabel['height'] = 1
-            self.miLabel['width'] = 2
-            self.hourLabel.place(x=38,y=85)
-            self.sLabel.place(x=168,y=85)
-            self.miLabel.place(x=193,y=85)
+            self.miLabel['width'] = 3
+            self.hourLabel.place(x=50,y=119)
+            self.sLabel.place(x=275,y=110)
+            self.miLabel.place(x=295,y=119)
             
             self.tick()
 
             #TODO 从天气信息中获取第一天的星期几信息
             #显示星期几 
             self.todayLabel = tk.Label(self.mainFrame,text = '星期五',background='black',
-                                       foreground='darkgray',font=('宋体',30,'bold'))
+                                       foreground='darkgray',font=('宋体',42,'bold'))
             self.todayLabel['height'] = 1
-            self.todayLabel.place(x=600,y=20)
+            self.todayLabel.place(x=840,y=28)
 
             #显示当前配置的城市
-            self.cityLabel = tk.Label(self.mainFrame,text='海门',font=('宋体',30,'bold'),fg='darkgray',bg = 'black')
+            self.cityLabel = tk.Label(self.mainFrame,text='海门',font=('宋体',42,'bold'),fg='darkgray',bg = 'black')
             self.cityLabel['height'] = 1
-            self.cityLabel.place(x=450,y=20)
+            self.cityLabel.place(x=630,y=28)
             
             self.get_city()
 
             #TODO 获取当日天气与未来天气信息
             self.weather = tk.PhotoImage(file='png/weather_tempest.png')
             self.pnglabel = tk.Label(self.mainFrame,image=self.weather,borderwidth=0)
-            self.tWeather = tk.Label(self.mainFrame,text='白天:雷雨',font=('宋体',14,'bold'),fg='white',bg='black')
-            self.tump = tk.Label(self.mainFrame,text = '27℃~34℃',font=('宋体',14,'bold'),fg='white',bg='black')
-            self.wind = tk.Label(self.mainFrame,text='东南风',font = ('宋体',14,'bold'),fg='white',bg = 'black')
-            self.windforce = tk.Label(self.mainFrame,text='4 级',font = ('宋体',14,'bold'),fg='white',bg = 'black')
-            self.sunriseL = tk.Label(self.mainFrame,text='日出:06:59',font = ('宋体',14,'bold'),fg='white',bg = 'black')
-            self.sundownL = tk.Label(self.mainFrame,text='日落:18:59',font = ('宋体',14,'bold'),fg='white',bg = 'black')
-            self.outAirQ = tk.Label(self.mainFrame,text='室外空气质量:优',font = ('宋体',14,'bold'),fg='white',bg = 'black')
-            self.outAirQtip = tk.Label(self.mainFrame,text='适合户外活动',font = ('宋体',14,'bold'),fg='white',bg = 'black')
-            self.pnglabel.place(x=450,y=90)
-            self.tWeather.place(x=530,y=90)
-            self.tump.place(x=640,y=90)
-            self.wind.place(x=530,y=115)
-            self.windforce.place(x=640,y=115)
-            self.sunriseL.place(x=450,y=140)
-            self.sundownL.place(x=635,y=140)
-            self.outAirQ.place(x=450,y=165)
-            self.outAirQtip.place(x=450,y=190)
+            self.tWeather = tk.Label(self.mainFrame,text='白天:雷雨',font=('宋体',20,'bold'),fg='white',bg='black')
+            self.tump = tk.Label(self.mainFrame,text = '27℃~34℃',font=('宋体',20,'bold'),fg='white',bg='black')
+            self.wind = tk.Label(self.mainFrame,text='东南风',font = ('宋体',20,'bold'),fg='white',bg = 'black')
+            self.windforce = tk.Label(self.mainFrame,text='4 级',font = ('宋体',20,'bold'),fg='white',bg = 'black')
+            self.sunriseL = tk.Label(self.mainFrame,text='日出:06:59',font = ('宋体',20,'bold'),fg='white',bg = 'black')
+            self.sundownL = tk.Label(self.mainFrame,text='日落:18:59',font = ('宋体',20,'bold'),fg='white',bg = 'black')
+            self.outAirQ = tk.Label(self.mainFrame,text='室外空气质量:优',font = ('宋体',20,'bold'),fg='white',bg = 'black')
+            self.outAirQtip = tk.Label(self.mainFrame,text='适合户外活动',font = ('宋体',20,'bold'),fg='white',bg = 'black')
+            self.pnglabel.place(x=640,y=126)
+            self.tWeather.place(x=702,y=126)#742
+            self.tump.place(x=896,y=126)
+            self.wind.place(x=702,y=161)
+            self.windforce.place(x=896,y=161)
+            self.sunriseL.place(x=630,y=196)
+            self.sundownL.place(x=889,y=196)
+            self.outAirQ.place(x=630,y=231)
+            self.outAirQtip.place(x=630,y=266)
             #每日贴士
             self.tipsLabel = tk.Label(self.mainFrame,text='避免长时间在日光下暴晒或在高温环境中工作。',
-                                      font = ('楷体',16,'bold'),fg = 'white',bg = 'black',width = 60,height =3,
-                                      wraplength = 700,anchor = 'nw',justify = 'left')
-            self.tipsLabel.place(x=34,y=960)
+                                      font = ('楷体',22,'bold'),fg = 'white',bg = 'black',width = 84,height =4,
+                                      wraplength = 980,anchor = 'nw',justify = 'left')
+            self.tipsLabel.place(x=48,y=1344)
             
             self.get_WeatherInfo()
 
             #未来四天的天气预报
-            self.ffLabel = tk.Label(text='星期三',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.fftLabel = tk.Label(text='36~28℃',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
+            self.ffLabel = tk.Label(text='星期三',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.fftLabel = tk.Label(text='36~28℃',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
             #self.ffaLabel = tk.Label(text='差严重污染',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.ffweLabel = tk.Label(text='多云',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.ffwnLabel = tk.Label(text='东南风',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.ffwnFLabel = tk.Label(text='3-4级',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.ffLabel.place(x=350,y=235)
-            self.fftLabel.place(x=425,y=235)
+            self.ffweLabel = tk.Label(text='多云',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.ffwnLabel = tk.Label(text='东南风',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.ffwnFLabel = tk.Label(text='3-4级',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.ffLabel.place(x=490,y=329)
+            self.fftLabel.place(x=595,y=329)
             #self.ffaLabel.place(x=445,y=235)
-            self.ffweLabel.place(x=515,y=235)
-            self.ffwnLabel.place(x=615,y=235)
-            self.ffwnFLabel.place(x=705,y=235)
+            self.ffweLabel.place(x=721,y=329)
+            self.ffwnLabel.place(x=861,y=329)
+            self.ffwnFLabel.place(x=987,y=329)
             
-            self.thLabel = tk.Label(text='星期三',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.thtLabel = tk.Label(text='36~28℃',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
+            self.thLabel = tk.Label(text='星期三',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.thtLabel = tk.Label(text='36~28℃',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
             #self.thaLabel = tk.Label(text='差严重污染',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.thweLabel = tk.Label(text='多云',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.thwnLabel = tk.Label(text='东南风',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.thwnFLabel = tk.Label(text='3-4级',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.thLabel.place(x=350,y=260)
-            self.thtLabel.place(x=425,y=260)
+            self.thweLabel = tk.Label(text='多云',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.thwnLabel = tk.Label(text='东南风',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.thwnFLabel = tk.Label(text='3-4级',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.thLabel.place(x=490,y=364)
+            self.thtLabel.place(x=595,y=364)
             #self.thaLabel.place(x=445,y=260)
-            self.thweLabel.place(x=515,y=260)
-            self.thwnLabel.place(x=615,y=260)
-            self.thwnFLabel.place(x=705,y=260)
+            self.thweLabel.place(x=721,y=364)
+            self.thwnLabel.place(x=861,y=364)
+            self.thwnFLabel.place(x=987,y=364)
 
-            self.ftLabel = tk.Label(text='星期三',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.fttLabel = tk.Label(text='36~28℃',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
+            self.ftLabel = tk.Label(text='星期三',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.fttLabel = tk.Label(text='36~28℃',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
             #self.ftaLabel = tk.Label(text='差严重污染',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.ftweLabel = tk.Label(text='多云',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.ftwnLabel = tk.Label(text='东南风',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.ftwnFLabel = tk.Label(text='3-4级',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.ftLabel.place(x=350,y=285)
-            self.fttLabel.place(x=425,y=285)
+            self.ftweLabel = tk.Label(text='多云',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.ftwnLabel = tk.Label(text='东南风',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.ftwnFLabel = tk.Label(text='3-4级',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.ftLabel.place(x=490,y=399)
+            self.fttLabel.place(x=595,y=399)
             #self.ftaLabel.place(x=445,y=285)
-            self.ftweLabel.place(x=515,y=285)
-            self.ftwnLabel.place(x=615,y=285)
-            self.ftwnFLabel.place(x=705,y=285)
+            self.ftweLabel.place(x=721,y=399)
+            self.ftwnLabel.place(x=861,y=399)
+            self.ftwnFLabel.place(x=987,y=399)
 
-            self.fiLabel = tk.Label(text='星期三',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.fitLabel = tk.Label(text='36~28℃',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
+            self.fiLabel = tk.Label(text='星期三',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.fitLabel = tk.Label(text='36~28℃',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
             #self.fiaLabel = tk.Label(text='差严重污染',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.fiweLabel = tk.Label(text='多云',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.fiwnLabel = tk.Label(text='东南风',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.fiwnFLabel = tk.Label(text='3-4级',font = ('楷体',14,'bold'),fg='gray',bg = 'black')
-            self.fiLabel.place(x=350,y=310)
-            self.fitLabel.place(x=425,y=310)
+            self.fiweLabel = tk.Label(text='多云',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.fiwnLabel = tk.Label(text='东南风',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.fiwnFLabel = tk.Label(text='3-4级',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
+            self.fiLabel.place(x=490,y=434)
+            self.fitLabel.place(x=595,y=434)
             #self.fiaLabel.place(x=445,y=310)
-            self.fiweLabel.place(x=515,y=310)
-            self.fiwnLabel.place(x=615,y=310)
-            self.fiwnFLabel.place(x=705,y=310)
+            self.fiweLabel.place(x=721,y=434)
+            self.fiwnLabel.place(x=861,y=434)
+            self.fiwnFLabel.place(x=987,y=434)
             self.get_featureWea()
 
             #新浪实时新闻显示
-            self.newsLabelTime = tk.Label(self.mainFrame,text='新浪消息:10:27:37',font = ('宋体',18,'bold'),fg = 'white',bg='black')
-            self.newsLabelTime.place(x=34,y=1095)
+            self.newsLabelTime = tk.Label(self.mainFrame,text='新浪消息:10:27:37',font = ('宋体',25,'bold'),fg = 'white',bg='black')
+            self.newsLabelTime.place(x=48,y=1533)
             self.newsLabel = tk.Label(self.mainFrame,text='【最高检：检察机关依法对鲁炜、莫建成、张杰辉三案提起公诉】',
-                                      font = ('宋体',14,'bold'),fg = 'white',bg='black',width = 63,height=9,
-                                      wraplength = 690,anchor = 'nw',justify = 'left',pady=3)
-            self.newsLabel.place(x=34,y=1130)
+                                      font = ('宋体',20,'bold'),fg = 'white',bg='black',width = 88,height=13,
+                                      wraplength = 966,anchor = 'nw',justify = 'left',pady=4)
+            self.newsLabel.place(x=48,y=1582)
             self.get_sinaNews()
             def func(event):
                   if event.char in ['q','Q']:
