@@ -362,7 +362,7 @@ class magicMirror:
             self.ffLabel.place(x=350,y=235)
             self.fftLabel.place(x=425,y=235)
             #self.ffaLabel.place(x=445,y=235)
-            self.ffweLabel.place(x=520,y=235)
+            self.ffweLabel.place(x=515,y=235)
             self.ffwnLabel.place(x=615,y=235)
             self.ffwnFLabel.place(x=705,y=235)
             
@@ -375,7 +375,7 @@ class magicMirror:
             self.thLabel.place(x=350,y=260)
             self.thtLabel.place(x=425,y=260)
             #self.thaLabel.place(x=445,y=260)
-            self.thweLabel.place(x=520,y=260)
+            self.thweLabel.place(x=515,y=260)
             self.thwnLabel.place(x=615,y=260)
             self.thwnFLabel.place(x=705,y=260)
 
@@ -388,7 +388,7 @@ class magicMirror:
             self.ftLabel.place(x=350,y=285)
             self.fttLabel.place(x=425,y=285)
             #self.ftaLabel.place(x=445,y=285)
-            self.ftweLabel.place(x=520,y=285)
+            self.ftweLabel.place(x=515,y=285)
             self.ftwnLabel.place(x=615,y=285)
             self.ftwnFLabel.place(x=705,y=285)
 
@@ -401,7 +401,7 @@ class magicMirror:
             self.fiLabel.place(x=350,y=310)
             self.fitLabel.place(x=425,y=310)
             #self.fiaLabel.place(x=445,y=310)
-            self.fiweLabel.place(x=520,y=310)
+            self.fiweLabel.place(x=515,y=310)
             self.fiwnLabel.place(x=615,y=310)
             self.fiwnFLabel.place(x=705,y=310)
             self.get_featureWea()
@@ -418,6 +418,9 @@ class magicMirror:
                   if event.char in ['q','Q']:
                         print('event')
                         self.mirror.destroy()
+            def fune(event):
+                  self.mirror.destroy()
+            self.dayLabel.bind('<Button-1>',fune)
             self.mirror.bind("<Key>",func)#窗体绑定事件，按下q/Q键窗体会被destroy掉
             self.mirror.mainloop()
 #magicMirror()
