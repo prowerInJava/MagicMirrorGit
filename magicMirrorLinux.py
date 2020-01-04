@@ -165,7 +165,7 @@ class magicMirror:
                         self.weatherPng='sun.png'
                   elif '雾' in daytime:
                         self.weatherPng ='weather_fog_48px.png'
-                  else :self.weatherPng='weather_cloud_32px.png'
+                  else :self.weatherPng='Cloud_48px.png'
                   self.weater = tk.PhotoImage(file='png/'+self.weatherPng)                        
             else:
                   self.tWeather.config(text='晚上:'+night)
@@ -185,7 +185,7 @@ class magicMirror:
                         self.weatherPng='sun.png'
                   elif '雾' in night:
                         self.weatherPng ='weather_fog_48px.png'
-                  else :self.weatherPng='weather_cloud_32px.png'
+                  else :self.weatherPng='Cloud_48px.png'
                   self.weater = tk.PhotoImage(file='png/'+self.weatherPng)
                         
             self.pnglabel.config(image=self.weater)
