@@ -95,27 +95,30 @@ class magicMirror:
                         list7d.append(i.split(','))
                   
                   #print (list7d)
-            daytime = mappd['白天']
-            night = mappd['夜间']
-            weekdate = time.strftime('%A') #获取今天是星期几
-            #print(mappd)
-            sunrise = mappd['日出'].strip()
-            sundown = mappd['日落'].strip()
-            if weekdate =='Monday':
-                  mappd['日期'] = '星期一'
-            elif weekdate =='Tuesday':
-                  mappd['日期'] = '星期二'
-            elif weekdate =='Wednesday':
-                  mappd['日期'] = '星期三'
-            elif weekdate =='Thursday':
-                  mappd['日期'] = '星期四'
-            elif weekdate =='Friday':
-                  mappd['日期'] = '星期五'
-            elif weekdate =='Saturday':
-                  mappd['日期'] = '星期六'
-            elif weekdate =='Sunday':
-                  mappd['日期'] = '星期日'
-            day = mappd['日期']
+            try:
+                  daytime = mappd['白天']
+                  night = mappd['夜间']
+                  weekdate = time.strftime('%A') #获取今天是星期几
+                  #print(mappd)
+                  sunrise = mappd['日出'].strip()
+                  sundown = mappd['日落'].strip()
+                  if weekdate =='Monday':
+                        mappd['日期'] = '星期一'
+                  elif weekdate =='Tuesday':
+                        mappd['日期'] = '星期二'
+                  elif weekdate =='Wednesday':
+                        mappd['日期'] = '星期三'
+                  elif weekdate =='Thursday':
+                        mappd['日期'] = '星期四'
+                  elif weekdate =='Friday':
+                        mappd['日期'] = '星期五'
+                  elif weekdate =='Saturday':
+                        mappd['日期'] = '星期六'
+                  elif weekdate =='Sunday':
+                        mappd['日期'] = '星期日'
+                  day = mappd['日期']
+            except Exception:
+                  print("day",datetime.datetime.now().strftime('%Y-%m-%d-%h-%M'))
             #print(mappd)
             #high = list7d[0][2].split(':')[1]
             high = mappd['高温'].split('°')[0]
@@ -189,7 +192,7 @@ class magicMirror:
                   self.weater = tk.PhotoImage(file='png/'+self.weatherPng)
                         
             self.pnglabel.config(image=self.weater)
-            #TODO
+            
             i = random.randint(0,len(list(maptips))-1)
             k = list(maptips)[i]
             v = maptips[k]
@@ -212,70 +215,74 @@ class magicMirror:
                   for i in data:
                         list7d.append(i.split(','))
             #index 1,2,3,4
-            #第二天
-            day = dayMap[list7d[1][0].split(":")[1].split(" ")[0].lower()]
-            high = list7d[1][2].split(":")[1].strip().lower()
-            low = list7d[1][3].split(":")[1].strip().lower()
-            tump = list7d[1][1].split(":")[1].strip().lower()
-            wind = list7d[1][5].split(":")[1].strip().lower()
-            windforce = list7d[1][4].split(":")[1].strip().lower()
-            #print(day,high,low,tump,wind,windforce)
-            if day !='':
-                  self.ffLabel.config(text=day)
-                  self.fftLabel.config(text=high+'~'+low+'℃')
-                  #self.ffaLabel.config(text=tip)
-                  self.ffweLabel.config(text=tump)
-                  self.ffwnLabel.config(text=wind)
-                  self.ffwnFLabel.config(text=windforce)
-            #第三天    
-            day = dayMap[list7d[2][0].split(":")[1].split(" ")[0].lower()]
-            #print (day)
-            high = list7d[2][2].split(":")[1].strip().lower()
-            low = list7d[2][3].split(":")[1].strip().lower()
-            tump= list7d[2][1].split(":")[1].strip().lower()
-            wind = list7d[2][5].split(":")[1].strip().lower()
-            windforce = list7d[2][4].split(":")[1].strip().lower()
-            #print (list7d[1],list7d[2],list7d[3],list7d[4])
-            if day !='':
-                  self.thLabel.config(text=day)
-                  self.thtLabel.config(text=high+'~'+low+'℃')
-                  #self.thaLabel.config(text=tip)
-                  self.thweLabel.config(text=tump)
-                  self.thwnLabel.config(text=wind)
-                  self.thwnFLabel.config(text=windforce)
-            #第四天    
-            day = dayMap[list7d[3][0].split(":")[1].split(" ")[0].lower()]
-            #print (day)
-            high = list7d[3][2].split(":")[1].strip().lower()
-            low = list7d[3][3].split(":")[1].strip().lower()
-            tump = list7d[3][1].split(":")[1].strip().lower()
-            wind = list7d[3][5].split(":")[1].strip().lower()
-            windforce = list7d[3][4].split(":")[1].strip().lower()
-            #print (list7d[1],list7d[2],list7d[3],list7d[4])
-            if day !='':
-                  self.ftLabel.config(text=day)
-                  self.fttLabel.config(text=high+'~'+low+'℃')
-                  #self.ftaLabel.config(text=tip)
-                  self.ftweLabel.config(text=tump)
-                  self.ftwnLabel.config(text=wind)
-                  self.ftwnFLabel.config(text=windforce)
-            #第五天    
-            day = dayMap[list7d[4][0].split(":")[1].split(" ")[0].lower()]
-            #print (day)
-            high = list7d[4][2].split(":")[1].strip().lower()
-            low = list7d[4][3].split(":")[1].strip().lower()
-            tump = list7d[4][1].split(":")[1].strip().lower()
-            wind = list7d[4][5].split(":")[1].strip().lower()
-            windforce = list7d[4][4].split(":")[1].strip().lower()
-            #print (list7d[1],list7d[2],list7d[3],list7d[4])
-            if day !='':
-                  self.fiLabel.config(text=day)
-                  self.fitLabel.config(text=high+'~'+low+'℃')
-                  #self.fiaLabel.config(text=tip)
-                  self.fiweLabel.config(text=tump)
-                  self.fiwnLabel.config(text=wind)
-                  self.fiwnFLabel.config(text=windforce)
-            self.fiwnFLabel.after(5000,self.get_featureWea)
+           
+            try :
+                   #第二天
+                  day = dayMap[list7d[1][0].split(":")[1].split(" ")[0].lower()]
+                  high = list7d[1][2].split(":")[1].strip().lower()
+                  low = list7d[1][3].split(":")[1].strip().lower()
+                  tump = list7d[1][1].split(":")[1].strip().lower()
+                  wind = list7d[1][5].split(":")[1].strip().lower()
+                  windforce = list7d[1][4].split(":")[1].strip().lower()
+                  #print(day,high,low,tump,wind,windforce)
+                  if day !='':
+                        self.ffLabel.config(text=day)
+                        self.fftLabel.config(text=high+'~'+low+'℃')
+                        #self.ffaLabel.config(text=tip)
+                        self.ffweLabel.config(text=tump)
+                        self.ffwnLabel.config(text=wind)
+                        self.ffwnFLabel.config(text=windforce)
+                  #第三天    
+                  day = dayMap[list7d[2][0].split(":")[1].split(" ")[0].lower()]
+                  #print (day)
+                  high = list7d[2][2].split(":")[1].strip().lower()
+                  low = list7d[2][3].split(":")[1].strip().lower()
+                  tump= list7d[2][1].split(":")[1].strip().lower()
+                  wind = list7d[2][5].split(":")[1].strip().lower()
+                  windforce = list7d[2][4].split(":")[1].strip().lower()
+                  #print (list7d[1],list7d[2],list7d[3],list7d[4])
+                  if day !='':
+                        self.thLabel.config(text=day)
+                        self.thtLabel.config(text=high+'~'+low+'℃')
+                        #self.thaLabel.config(text=tip)
+                        self.thweLabel.config(text=tump)
+                        self.thwnLabel.config(text=wind)
+                        self.thwnFLabel.config(text=windforce)
+                  #第四天    
+                  day = dayMap[list7d[3][0].split(":")[1].split(" ")[0].lower()]
+                  #print (day)
+                  high = list7d[3][2].split(":")[1].strip().lower()
+                  low = list7d[3][3].split(":")[1].strip().lower()
+                  tump = list7d[3][1].split(":")[1].strip().lower()
+                  wind = list7d[3][5].split(":")[1].strip().lower()
+                  windforce = list7d[3][4].split(":")[1].strip().lower()
+                  #print (list7d[1],list7d[2],list7d[3],list7d[4])
+                  if day !='':
+                        self.ftLabel.config(text=day)
+                        self.fttLabel.config(text=high+'~'+low+'℃')
+                        #self.ftaLabel.config(text=tip)
+                        self.ftweLabel.config(text=tump)
+                        self.ftwnLabel.config(text=wind)
+                        self.ftwnFLabel.config(text=windforce)
+                  #第五天    
+                  day = dayMap[list7d[4][0].split(":")[1].split(" ")[0].lower()]
+                  #print (day)
+                  high = list7d[4][2].split(":")[1].strip().lower()
+                  low = list7d[4][3].split(":")[1].strip().lower()
+                  tump = list7d[4][1].split(":")[1].strip().lower()
+                  wind = list7d[4][5].split(":")[1].strip().lower()
+                  windforce = list7d[4][4].split(":")[1].strip().lower()
+                  #print (list7d[1],list7d[2],list7d[3],list7d[4])
+                  if day !='':
+                        self.fiLabel.config(text=day)
+                        self.fitLabel.config(text=high+'~'+low+'℃')
+                        #self.fiaLabel.config(text=tip)
+                        self.fiweLabel.config(text=tump)
+                        self.fiwnLabel.config(text=wind)
+                        self.fiwnFLabel.config(text=windforce)
+                  self.fiwnFLabel.after(5000,self.get_featureWea)
+            except Exception:
+                  print("feature",datetime.datetime.now().strftime('%Y-%m-%d-%h-%M'))
             return None
       #主体
       def Mirror(self):
@@ -350,8 +357,10 @@ class magicMirror:
                                       font = ('楷体',22,'bold'),fg = 'white',bg = 'black',width = 84,height =4,
                                       wraplength = 980,anchor = 'nw',justify = 'left')
             self.tipsLabel.place(x=48,y=1344)
-            
-            self.get_WeatherInfo()
+            try:
+                  self.get_WeatherInfo()
+            except Exception:
+                  print(datetime.datetime.now().strftime('%Y-%m-%d-%h-%M'))
 
             #未来四天的天气预报
             self.ffLabel = tk.Label(text='星期三',font = ('楷体',20,'bold'),fg='gray',bg = 'black')
@@ -405,7 +414,10 @@ class magicMirror:
             self.fiweLabel.place(x=721,y=434)
             self.fiwnLabel.place(x=861,y=434)
             self.fiwnFLabel.place(x=987,y=434)
-            self.get_featureWea()
+            try:
+                  self.get_featureWea()
+            except Exception:
+                  print("get_feature",datetime.datetime.now().strftime('%Y-%m-%d-%h-%M'))
 
             #新浪实时新闻显示
             self.newsLabelTime = tk.Label(self.mainFrame,text='新浪消息:10:27:37',font = ('宋体',25,'bold'),fg = 'white',bg='black')
